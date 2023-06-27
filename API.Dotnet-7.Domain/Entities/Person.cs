@@ -11,7 +11,7 @@ namespace API.Dotnet_7.Domain.Entities
 
 		public Person(int id, string name, string document, string phone)
 		{
-			DomainValidationException.When(id < 0, "id must be greater than zero");
+			DomainValidationException.When(id < 0, "the id must be informed");
 			Id = id;
 			Validation(name, document, phone);
 
@@ -21,6 +21,7 @@ namespace API.Dotnet_7.Domain.Entities
 		public string Name { get; private set; }
 		public string Document { get; private set; }
 		public string Phone { get; private set; }
+		public ICollection<Purchase> Purchases { get; set; }
 
 
 		private void Validation(string document, string name, string phone)
