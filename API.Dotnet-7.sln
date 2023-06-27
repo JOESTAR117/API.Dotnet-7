@@ -3,15 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Dotnet-7.Domain", "API.Dotnet-7.Domain\API.Dotnet-7.Domain.csproj", "{C6659DA9-7AC4-45D6-A2C5-EA5EE8472452}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Dotnet-7.Domain", "API.Dotnet-7.Domain\API.Dotnet-7.Domain.csproj", "{C6659DA9-7AC4-45D6-A2C5-EA5EE8472452}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Dotnet-7.Infra.Data", "API.Dotnet-7.Infra.Data\API.Dotnet-7.Infra.Data.csproj", "{BFFB0D39-E1EB-49C1-BD7F-517116D625B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Dotnet-7.Infra.Data", "API.Dotnet-7.Infra.Data\API.Dotnet-7.Infra.Data.csproj", "{BFFB0D39-E1EB-49C1-BD7F-517116D625B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Dotnet-7.Application", "API.Dotnet-7.Application\API.Dotnet-7.Application.csproj", "{37E6E2F3-1305-4F24-980B-8A074D76D38A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Dotnet-7.Application", "API.Dotnet-7.Application\API.Dotnet-7.Application.csproj", "{37E6E2F3-1305-4F24-980B-8A074D76D38A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Dotnet-7.Infra.IoC", "API.Dotnet-7.Infra.IoC\API.Dotnet-7.Infra.IoC.csproj", "{66EF2067-A4DF-4478-8A1B-8706B1BBEBA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Dotnet-7.Infra.IoC", "API.Dotnet-7.Infra.IoC\API.Dotnet-7.Infra.IoC.csproj", "{66EF2067-A4DF-4478-8A1B-8706B1BBEBA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Dotnet-7.Api", "API.Dotnet-7.Api\API.Dotnet-7.Api.csproj", "{47DC5AE5-51D0-4A85-A349-02A38D26A9FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Dotnet-7.Api", "API.Dotnet-7.Api\API.Dotnet-7.Api.csproj", "{47DC5AE5-51D0-4A85-A349-02A38D26A9FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{08A0C4BB-B154-4250-A455-89A4421D7003}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
