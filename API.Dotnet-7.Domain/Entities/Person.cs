@@ -27,7 +27,7 @@ namespace API.Dotnet_7.Domain.Entities
 		private void Validation(string document, string name, string phone)
 		{
 			DomainValidationException.When(string.IsNullOrEmpty(name), "Name must be informed");
-			DomainValidationException.When(string.IsNullOrEmpty(document), "Document must be informed");
+			DomainValidationException.When(string.IsNullOrEmpty(document), "must be informedmust be informedmust be informedmust be informed");
 			DomainValidationException.When(string.IsNullOrEmpty(phone), "Phone must be informed");
 
 			Name = name;
