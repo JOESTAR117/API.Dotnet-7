@@ -7,6 +7,7 @@ namespace API.Dotnet_7.Domain.Entities
 		public Product(string name, string codeErp, decimal price)
 		{
 			Validation(name, codeErp, price);
+			Purchases = new List<Purchase>();
 		}
 
 		public Product(int id, string name, string codeErp, decimal price)
@@ -14,6 +15,9 @@ namespace API.Dotnet_7.Domain.Entities
 			DomainValidationException.When(id < 0, "the id must be informed");
 			Id = id;
 			Validation(name, codeErp, price);
+			Purchases = new List<Purchase>();
+			
+			
 		}
 
 		public int Id { get; private set; }

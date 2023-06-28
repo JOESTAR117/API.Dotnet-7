@@ -7,6 +7,7 @@ namespace API.Dotnet_7.Domain.Entities
 		public Person(string name, string document, string phone)
 		{
 			Validation(name, document, phone);
+			Purchases = new List<Purchase>();
 		}
 
 		public Person(int id, string name, string document, string phone)
@@ -14,6 +15,7 @@ namespace API.Dotnet_7.Domain.Entities
 			DomainValidationException.When(id < 0, "the id must be informed");
 			Id = id;
 			Validation(name, document, phone);
+			Purchases = new List<Purchase>();
 
 		}
 

@@ -9,9 +9,11 @@ namespace API.Dotnet_7.Infra.Data.Maps
 		public void Configure(EntityTypeBuilder<Person> builder)
 		{
 			builder.ToTable("Pessoa");
+
 			builder.HasKey(x => x.Id);
+
 			builder.Property(x => x.Id)
-				.HasColumnName("IdPessoa")
+				.HasColumnName("Idpessoa")
 				.UseIdentityColumn();
 
 			builder.Property(x => x.Document)
