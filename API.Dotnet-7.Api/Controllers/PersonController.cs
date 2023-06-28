@@ -16,9 +16,30 @@ namespace API.Dotnet_7.Api.Controllers
 		}
 
 		[HttpPost]
-		public async Task<ActionResult> Post(PersonDTO personDTO)
+		public async Task<ActionResult> PostAsync(PersonDTO personDTO)
 		{
 			var result = await _personService.CreateAsync(personDTO);
+			if (result.IsSuccess)
+				return Ok(result);
+
+			return BadRequest(result);
+		}
+
+		[HttpGet]
+		public async Task<ActionResult> GetAllAsync()
+		{
+			var result = await _personService.getAllAsync();
+			if (result.IsSuccess)
+				return Ok(result);
+
+			return BadRequest(result);
+		}
+
+		[HttpGet]
+		[Route("{id}")]
+		public async Task<ActionResult> GetByIdAsync(int id)
+		{
+			var result = await _personService.GetByIdAsync(id);
 			if (result.IsSuccess)
 				return Ok(result);
 

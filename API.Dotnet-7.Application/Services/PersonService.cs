@@ -29,7 +29,21 @@ namespace API.Dotnet_7.Application.Services
 
 			var person = _mapper.Map<Person>(personDTO);
 			var data = await _personRepository.CreateAsync(person);
-			return ResultService.Ok<PersonDTO>(_mapper.Map<PersonDTO>(data));
+			return ResultService.Ok(_mapper.Map<PersonDTO>(data));
+		}
+
+		public async Task<ResultService<ICollection<PersonDTO>>> getAllAsync() 
+		{
+			var peoples = await _personRepository.GetPeopleAsync();
+			return ResultService.Ok(_mapper.Map<ICollection<PersonDTO>>(peoples));
+		}
+
+		public async Task<ResultService<PersonDTO>> GetByIdAsync(int id)
+		{
+			var people = await _personRepository.GetByIdAsync(id);
+			if (people == null)
+				return ResultService.Fail<PersonDTO>("Person not found");
+			return ResultService.Ok(_mapper.Map<PersonDTO>(people));
 		}
 	}
 }
