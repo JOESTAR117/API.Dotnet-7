@@ -24,7 +24,7 @@ namespace API.Dotnet_7.Application.Services
 				return ResultService.Fail<PersonDTO>("object must be informed");
 
 			var result = new PersonDTOValidator().Validate(personDTO);
-			if (result.IsValid)
+			if (!result.IsValid)
 				return ResultService.RequestError<PersonDTO>("validity issues", result);
 
 			var person = _mapper.Map<Person>(personDTO);

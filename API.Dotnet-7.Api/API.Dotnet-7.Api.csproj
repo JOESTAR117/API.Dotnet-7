@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\API.Dotnet-7.Infra.IoC\API.Dotnet-7.Infra.IoC.csproj" />
   </ItemGroup>
 

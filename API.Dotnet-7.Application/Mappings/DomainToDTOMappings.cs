@@ -6,7 +6,7 @@ namespace API.Dotnet_7.Application.Mappings
 {
 	public class DomainToDTOMappings : Profile
 	{
-		protected DomainToDTOMappings()
+		public DomainToDTOMappings()
 		{
 			CreateMap<Person, PersonDTO>();
 		}

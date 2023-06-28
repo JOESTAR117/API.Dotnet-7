@@ -4,20 +4,16 @@ namespace API.Dotnet_7.Domain.Entities
 {
 	public sealed class Product
 	{
-		public Product(string name, string codeErp, decimal price)
+		public Product(string name, string codErp, decimal price)
 		{
-			Validation(name, codeErp, price);
-			Purchases = new List<Purchase>();
+			Validation(name, codErp, price);
 		}
 
-		public Product(int id, string name, string codeErp, decimal price)
+		public Product(int id, string name, string codErp, decimal price)
 		{
 			DomainValidationException.When(id < 0, "the id must be informed");
 			Id = id;
-			Validation(name, codeErp, price);
-			Purchases = new List<Purchase>();
-			
-			
+			Validation(name, codErp, price);
 		}
 
 		public int Id { get; private set; }
