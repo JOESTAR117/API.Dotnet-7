@@ -32,7 +32,16 @@ namespace API.Dotnet_7.Application.Services
 			return ResultService.Ok(_mapper.Map<PersonDTO>(data));
 		}
 
-		public async Task<ResultService<ICollection<PersonDTO>>> getAllAsync() 
+		public async Task<ResultService> DeleteAsync(int id)
+		{
+			var people = await _personRepository.GetByIdAsync(id);
+			if (people == null)
+				return ResultService.Fail<PersonDTO>("Person not found");
+			await _personRepository.DeleteAsync(people);
+			return ResultService.Ok("Person removed successfully");
+		}
+
+		public async Task<ResultService<ICollection<PersonDTO>>> getAllAsync()
 		{
 			var peoples = await _personRepository.GetPeopleAsync();
 			return ResultService.Ok(_mapper.Map<ICollection<PersonDTO>>(peoples));
@@ -44,6 +53,24 @@ namespace API.Dotnet_7.Application.Services
 			if (people == null)
 				return ResultService.Fail<PersonDTO>("Person not found");
 			return ResultService.Ok(_mapper.Map<PersonDTO>(people));
+		}
+
+		public async Task<ResultService> UpdateAsync(PersonDTO personDTO)
+		{
+			if (personDTO == null)
+				return ResultService.Fail("object must be informed");
+
+			var validation = new PersonDTOValidator().Validate(personDTO);
+			if (!validation.IsValid)
+				return ResultService.RequestError("Problem with field validation", validation);
+
+			var person = await _personRepository.GetByIdAsync(personDTO.Id);
+			if (person == null)
+				return ResultService.Fail("Person not found");
+
+			person = _mapper.Map(personDTO, person);
+			await _personRepository.UpdateAsync(person);
+			return ResultService.Ok("successfully edited person");
 		}
 	}
 }
